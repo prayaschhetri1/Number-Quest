@@ -3,6 +3,8 @@
 let timer = 60;
 let score = 0;
 let randomNumberHit = "";
+
+// Function for making random numbers for selection
 function makeBubble() {
   let singleBubble = "";
   for (let i = 0; i < 160; i++) {
@@ -13,6 +15,7 @@ function makeBubble() {
   document.querySelector("#pannel-btm-cont").innerHTML = singleBubble;
 }
 
+// Function for the running timer
 function timerFunc() {
   let runTime = setInterval(function () {
     if (timer > 0) {
@@ -31,14 +34,14 @@ function timerFunc() {
       </div>`;
 
       let restartBtn = document.querySelector(".restart_btn");
-      restartBtn.addEventListener("click",function(){
+      restartBtn.addEventListener("click", function () {
         location.reload();
-      })
+      });
     }
   }, 1000);
 }
 
-
+// Function for random hit numbers
 function hitRandomNum() {
   randomNumberHit = Math.floor(Math.random() * 10);
   document.querySelector("#hit-number").innerHTML = randomNumberHit;
@@ -49,6 +52,7 @@ function scoreCalculation() {
   document.querySelector("#current-score").innerHTML = score;
 }
 
+// Function to check the clicked number is same to the given hit number
 function checkTheNumber() {
   document
     .querySelector("#pannel-btm-cont")
@@ -58,14 +62,16 @@ function checkTheNumber() {
         scoreCalculation();
         makeBubble();
         hitRandomNum();
-      } 
+      }
     });
 }
 
-function restartTheGame(){
-   let rsBtn = document.querySelector(".restart-btn");
-   console.log(rsBtn,"Hello world")
+// Function for restarting the game
+function restartTheGame() {
+  let rsBtn = document.querySelector(".restart-btn");
+  console.log(rsBtn, "Hello world");
 }
+
 // All function calls
 makeBubble();
 timerFunc();
