@@ -27,6 +27,7 @@ body {
 #pannel-top-cont {
   display: flex;
   padding: 0% 27%;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -66,6 +67,7 @@ body {
   gap: 8px;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 .game-end-cont button {
   border: none;
@@ -94,4 +96,42 @@ body {
 .bubble:hover,.game-end-cont button:hover {
   background-color: rgb(8, 56, 54);
   scale: 0.98;
+}
+
+
+
+@media only screen and (max-width: 1280px) and (min-width: 700px){
+  #pannel-top-cont{
+     padding: 0 5%;
+  } 
+}
+
+@media only screen and (max-width: 699px) and (min-width: 270px){
+  #pannel-top-cont{
+     padding: 0 5%;
+  } 
+  .ptop-box{
+    gap: 10px;
+  }
+  .ptop-box h2{
+     font-size: 14px;
+  }
+  .box {
+    padding: 8px 13px;
+    font-size: 14px;
+  }
+  .bubble {
+    width: 39px;
+    height: 39px;
+  }
+  .game-end-cont h1{
+    font-size: 25px;
+  }
+  .game-end-cont h2{
+    font-size: 21px;
+  }
+  .game-end-cont button{
+    padding: 12px;
+    font-size: 18px;
+  }
 }
