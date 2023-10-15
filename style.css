@@ -26,8 +26,9 @@ body {
 }
 #pannel-top-cont {
   display: flex;
-  padding: 0% 27%;
   flex-wrap: wrap;
+  padding: 0% 10%;
+  /* border: 1px solid red; */
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -108,7 +109,10 @@ body {
 
 @media only screen and (max-width: 699px) and (min-width: 270px){
   #pannel-top-cont{
-     padding: 0 5%;
+    height: auto;
+     padding: 12px 5%;
+     justify-content: center;
+     gap: 16px;
   } 
   .ptop-box{
     gap: 10px;

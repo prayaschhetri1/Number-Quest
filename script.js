@@ -1,6 +1,6 @@
 // This game is made/developed to learn Event Bubbling in JavaScript
 
-let timer = 60;
+let timer = 10;
 let score = 0;
 let randomNumberHit = "";
 
@@ -25,6 +25,16 @@ function timerFunc() {
     } else {
       //   console.log("Time end");
       clearInterval(runTime);
+      const key = "savedScored";
+      const existingScoredKey = localStorage.getItem(key);
+      let scoredArray = [];
+      if (existingScoredKey) {
+        // Parse the existing array from the stored JSON string
+        scoredArray = JSON.parse(existingScoredKey);
+      }
+      scoredArray.push(score);
+      localStorage.setItem(key, JSON.stringify(scoredArray));
+
       document.querySelector(
         "#pannel-btm-cont"
       ).innerHTML = `<div class="game-end-cont">
@@ -34,9 +44,7 @@ function timerFunc() {
       </div>`;
 
       let restartBtn = document.querySelector(".restart_btn");
-      restartBtn.addEventListener("click", function () {
-        location.reload();
-      });
+      restartTheGame(restartBtn);
     }
   }, 1000);
 }
@@ -67,12 +75,34 @@ function checkTheNumber() {
 }
 
 // Function for restarting the game
-function restartTheGame() {
-  let rsBtn = document.querySelector(".restart-btn");
-  console.log(rsBtn, "Hello world");
+function restartTheGame(btn) {
+  btn.addEventListener("click", function () {
+    location.reload();
+  });
+}
+
+// Best Score calculation
+const bstScoreCont = document.querySelector("#best-score");
+const bstScoreinnerCont = document.querySelector("#current-best-score");
+
+function bstScoreCalc() {
+
+  // Retrieve the array from localStorage
+  const savedAllScore = JSON.parse(localStorage.getItem("savedScored"));
+  if (savedAllScore) {
+    const bestScore = Math.max(...savedAllScore);
+    bstScoreinnerCont.innerHTML = bestScore;
+    
+  }
+  else{
+    bstScoreCont.style.display = "none";
+  }
+
+  // const bestScores = JSON.parse(localStorage.getItem('bstScores'));
 }
 
 // All function calls
+bstScoreCalc();
 makeBubble();
 timerFunc();
 hitRandomNum();
