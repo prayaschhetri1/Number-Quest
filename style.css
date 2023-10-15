@@ -114,6 +114,7 @@ body {
 }
 
 @media only screen and (max-width: 699px) and (min-width: 270px) {
+
   #pannel-top-cont {
     height: auto;
     padding: 12px 5%;
