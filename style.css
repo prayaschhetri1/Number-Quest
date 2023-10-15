@@ -57,15 +57,22 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  background-image: url('./images/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   height: calc(100% - 85px);
   padding: 17px;
   overflow: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
   gap: 12px;
 }
 .game-end-cont {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  color: white;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -73,7 +80,7 @@ body {
 .game-end-cont button {
   border: none;
   outline: none;
-  background-color: rgb(14, 76, 74);
+  background-color: rgb(17, 174, 166);
   color: white;
   padding: 12px;
   font-size: 20px;
@@ -89,36 +96,35 @@ body {
   justify-content: center;
   height: 55px;
   border-radius: 50%;
-  background-color: rgb(14, 76, 74);
+  background-color: rgb(5, 78, 74);
   color: white;
   cursor: pointer;
   transition: 0.3s ease-in-out;
 }
-.bubble:hover,.game-end-cont button:hover {
+.bubble:hover,
+.game-end-cont button:hover {
   background-color: rgb(8, 56, 54);
   scale: 0.98;
 }
 
-
-
-@media only screen and (max-width: 1280px) and (min-width: 700px){
-  #pannel-top-cont{
-     padding: 0 5%;
-  } 
+@media only screen and (max-width: 1280px) and (min-width: 700px) {
+  #pannel-top-cont {
+    padding: 0 5%;
+  }
 }
 
-@media only screen and (max-width: 699px) and (min-width: 270px){
-  #pannel-top-cont{
+@media only screen and (max-width: 699px) and (min-width: 270px) {
+  #pannel-top-cont {
     height: auto;
-     padding: 12px 5%;
-     justify-content: center;
-     gap: 16px;
-  } 
-  .ptop-box{
+    padding: 12px 5%;
+    justify-content: center;
+    gap: 16px;
+  }
+  .ptop-box {
     gap: 10px;
   }
-  .ptop-box h2{
-     font-size: 14px;
+  .ptop-box h2 {
+    font-size: 14px;
   }
   .box {
     padding: 8px 13px;
@@ -128,13 +134,13 @@ body {
     width: 45px;
     height: 45px;
   }
-  .game-end-cont h1{
+  .game-end-cont h1 {
     font-size: 25px;
   }
-  .game-end-cont h2{
+  .game-end-cont h2 {
     font-size: 21px;
   }
-  .game-end-cont button{
+  .game-end-cont button {
     padding: 12px;
     font-size: 18px;
   }

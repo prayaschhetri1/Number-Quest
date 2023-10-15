@@ -1,6 +1,6 @@
 // This game is made/developed to learn Event Bubbling in JavaScript
 
-let timer = 10;
+let timer = 60;
 let score = 0;
 let randomNumberHit = "";
 
@@ -42,6 +42,9 @@ function timerFunc() {
         <h2>Congratulations Your Score is ${score}😎</h2>
         <button class="restart_btn">Restart Now</button>
       </div>`;
+
+      document.querySelector("#pannel-btm-cont").style.backgroundImage =
+        "url('./images/background.jpg')";
 
       let restartBtn = document.querySelector(".restart_btn");
       restartTheGame(restartBtn);
@@ -86,15 +89,12 @@ const bstScoreCont = document.querySelector("#best-score");
 const bstScoreinnerCont = document.querySelector("#current-best-score");
 
 function bstScoreCalc() {
-
   // Retrieve the array from localStorage
   const savedAllScore = JSON.parse(localStorage.getItem("savedScored"));
   if (savedAllScore) {
     const bestScore = Math.max(...savedAllScore);
     bstScoreinnerCont.innerHTML = bestScore;
-    
-  }
-  else{
+  } else {
     bstScoreCont.style.display = "none";
   }
 
